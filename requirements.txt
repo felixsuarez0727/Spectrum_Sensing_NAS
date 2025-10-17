@@ -1,0 +1,140 @@
+# Neural Architecture Search (NAS) for Spectrum Sensing
+# Requirements for automated CNN architecture optimization
+# Target: <100K parameters, >98% accuracy, <0.5ms latency
+
+# ============================================================================
+# CORE DEEP LEARNING FRAMEWORKS
+# ============================================================================
+
+# TensorFlow for macOS ARM (optimized for Apple Silicon)
+tensorflow-macos==2.16.2
+
+# Core scientific computing
+numpy>=1.21.0
+scipy>=1.7.0
+
+# ============================================================================
+# NEURAL ARCHITECTURE SEARCH
+# ============================================================================
+
+# Optuna - Hyperparameter and architecture optimization
+optuna>=3.0.0
+
+# Additional NAS utilities
+optuna-dashboard>=0.12.0  # Web dashboard for monitoring NAS progress
+
+# ============================================================================
+# MACHINE LEARNING AND EVALUATION
+# ============================================================================
+
+# scikit-learn for metrics and evaluation
+scikit-learn>=1.0.0
+
+# Data handling
+pandas>=1.3.0
+h5py>=3.1.0
+
+# ============================================================================
+# VISUALIZATION AND PLOTTING
+# ============================================================================
+
+# Core plotting
+matplotlib>=3.5.0
+seaborn>=0.11.0
+
+# Additional visualization tools
+plotly>=5.0.0  # Interactive plots for NAS results
+kaleido>=0.2.1  # Static image export for plotly
+
+# ============================================================================
+# PROGRESS TRACKING AND MONITORING
+# ============================================================================
+
+# Progress bars
+tqdm>=4.62.0
+
+# Logging and monitoring
+tensorboard>=2.8.0
+wandb>=0.12.0  # Weights & Biases for experiment tracking (optional)
+
+# ============================================================================
+# DATA PROCESSING AND UTILITIES
+# ============================================================================
+
+# Jupyter notebook support
+jupyter>=1.0.0
+ipykernel>=6.0.0
+
+# Configuration and utilities
+pyyaml>=6.0
+python-dotenv>=0.19.0
+
+# ============================================================================
+# OPTIMIZATION AND PARALLELIZATION
+# ============================================================================
+
+# Parallel processing
+joblib>=1.1.0
+
+# Memory optimization
+psutil>=5.8.0  # System monitoring
+
+# ============================================================================
+# DEVELOPMENT AND TESTING
+# ============================================================================
+
+# Code quality
+pytest>=6.2.0
+black>=21.0.0
+flake8>=4.0.0
+
+# Documentation
+sphinx>=4.0.0
+sphinx-rtd-theme>=1.0.0
+
+# ============================================================================
+# SPECIFIC VERSIONS FOR COMPATIBILITY
+# ============================================================================
+
+# Ensure compatibility with TensorFlow 2.16.2
+protobuf>=3.19.0,<4.0.0
+
+# NumPy compatibility
+numpy>=1.21.0,<2.0.0
+
+# ============================================================================
+# INSTALLATION NOTES
+# ============================================================================
+
+# Installation order:
+# 1. pip install tensorflow-macos==2.16.2
+# 2. pip install optuna>=3.0.0
+# 3. pip install -r requirements.txt
+
+# For macOS ARM (Apple Silicon):
+# - Use tensorflow-macos instead of tensorflow
+# - Install with: pip install tensorflow-macos==2.16.2
+
+# For GPU support (if available):
+# - Install tensorflow-metal for GPU acceleration on macOS
+# - pip install tensorflow-metal
+
+# ============================================================================
+# VERIFICATION COMMANDS
+# ============================================================================
+
+# After installation, verify with:
+# python -c "import tensorflow as tf; print(f'TensorFlow: {tf.__version__}')"
+# python -c "import optuna; print(f'Optuna: {optuna.__version__}')"
+# python -c "import numpy, scipy, sklearn, pandas, h5py, matplotlib, seaborn; print('All packages imported successfully')"
+
+# ============================================================================
+# PROJECT-SPECIFIC NOTES
+# ============================================================================
+
+# This project implements Neural Architecture Search for Spectrum Sensing
+# Based on successful CNN implementation achieving 96.6% accuracy with 184K parameters
+# Target: <100K parameters, >98% accuracy, <0.5ms latency
+# Dataset: DeepSense WiFi 802.11 a/g (real IQ signals)
+# Architecture: CNN 1D with multi-label classification (4 channels)
+

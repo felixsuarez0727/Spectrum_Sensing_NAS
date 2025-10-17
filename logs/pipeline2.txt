@@ -1,0 +1,1581 @@
+(venv) jaime07ag@MacBook-Pro-de-Jaime Spectrum_Sensing_NAS % python run_nas.py pipeline
+🚀 Neural Architecture Search for Spectrum Sensing
+Target: <100K parameters, >98% accuracy, <0.5ms latency
+============================================================
+🔄 Running complete NAS pipeline...
+🚀 Running full NAS search (100 trials)...
+/Users/jaime07ag/Library/Mobile Documents/com~apple~CloudDocs/Downloads/Elva/Spectrum_Sensing_NAS/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+🚀 Starting Neural Architecture Search for Spectrum Sensing
+======================================================================
+🎯 Target Parameters: < 100,000
+🎯 Target Accuracy: > 98.0%
+🎯 Target Latency: < 0.5ms
+🔍 Search Trials: 100
+⚡ Optimization Weights: {'accuracy_weight': 0.7, 'efficiency_weight': 0.2, 'latency_weight': 0.1}
+======================================================================
+[I 2025-10-16 13:46:18,653] A new study created in memory with name: no-name-3d20f5a6-6dce-407c-9975-be9f09b70da0
+  0%|                                                                                                            | 0/100 [00:00<?, ?it/s]
+🔍 Trial 0: Starting architecture search...
+🔄 Loading datasets...
+📊 Loaded 1,758 samples from sdr_wifi_train.h5
+📊 Loaded 377 samples from sdr_wifi_val.h5
+📊 Loaded 377 samples from sdr_wifi_test.h5
+✅ All datasets loaded successfully!
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 256,804 > 100,000
+[I 2025-10-16 13:46:19,475] Trial 0 pruned.                                                                                              
+  1%|▊                                                                                | 1/100 [00:00<01:20,  1.23it/s, 0.81/3600 seconds]
+🔍 Trial 1: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 220,852 > 100,000
+[I 2025-10-16 13:46:20,232] Trial 1 pruned.                                                                                              
+  2%|█▌                                                                               | 2/100 [00:01<01:16,  1.28it/s, 1.57/3600 seconds]
+🔍 Trial 2: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 101,444 > 100,000
+[I 2025-10-16 13:46:20,976] Trial 2 pruned.                                                                                              
+  3%|██▍                                                                              | 3/100 [00:02<01:14,  1.31it/s, 2.31/3600 seconds]
+🔍 Trial 3: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 290,964 > 100,000
+[I 2025-10-16 13:46:21,741] Trial 3 pruned.                                                                                              
+  4%|███▏                                                                             | 4/100 [00:03<01:13,  1.31it/s, 3.08/3600 seconds]
+🔍 Trial 4: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 54,388 params, 0.21MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 50.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 4:
+   Exact Match Accuracy: 0.971
+   Average F1-Score: 0.993
+   Parameters: 54,388
+   Model Size: 0.21MB
+   Inference Time: 29.82ms
+   Combined Score: 0.771
+[I 2025-10-16 13:47:50,772] Trial 4 finished with value: 0.7707995968169761 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 3, 'conv_filters_0': 48, 'conv_kernel_0': 9, 'conv_activation_0': 'gelu', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 128, 'conv_kernel_1': 3, 'conv_activation_1': 'gelu', 'use_bn_1': True, 'conv_dropout_1': 0.5, 'pool_type_1': 'avg', 'conv_filters_2': 32, 'conv_kernel_2': 7, 'conv_activation_2': 'leaky_relu', 'use_bn_2': True, 'conv_dropout_2': 0.4, 'global_pool': 'max', 'dense_units_0': 64, 'dense_activation_0': 'swish', 'dense_dropout_0': 0.3, 'dense_units_1': 32, 'dense_activation_1': 'leaky_relu', 'dense_dropout_1': 0.5, 'dense_units_2': 32, 'dense_activation_2': 'leaky_relu', 'dense_dropout_2': 0.3}. Best is trial 4 with value: 0.7707995968169761.
+Best trial: 4. Best value: 0.7708:   5%|██▎                                          | 5/100 [01:32<51:36, 32.59s/it, 92.11/3600 seconds]
+🔍 Trial 5: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 245,364 > 100,000
+[I 2025-10-16 13:47:51,561] Trial 5 pruned.                                                                                              
+Best trial: 4. Best value: 0.7708:   6%|██▋                                          | 6/100 [01:32<34:07, 21.78s/it, 92.90/3600 seconds]
+🔍 Trial 6: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 297,156 > 100,000
+[I 2025-10-16 13:47:52,306] Trial 6 pruned.                                                                                              
+Best trial: 4. Best value: 0.7708:   7%|███▏                                         | 7/100 [01:33<23:06, 14.90s/it, 93.64/3600 seconds]
+🔍 Trial 7: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 156,692 > 100,000
+[I 2025-10-16 13:47:53,059] Trial 7 pruned.                                                                                              
+Best trial: 4. Best value: 0.7708:   8%|███▌                                         | 8/100 [01:34<15:56, 10.40s/it, 94.40/3600 seconds]
+🔍 Trial 8: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 93,412 params, 0.36MB
+🚀 Training model...
+❌ Trial 8 failed: Arguments `target` and `output` must have the same rank (ndim). Received: target.shape=(None, 4), output.shape=(None, 128, 4)
+[I 2025-10-16 13:47:54,139] Trial 8 finished with value: 0.0 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 3, 'conv_filters_0': 128, 'conv_kernel_0': 5, 'conv_activation_0': 'gelu', 'use_bn_0': True, 'conv_dropout_0': 0.2, 'conv_filters_1': 64, 'conv_kernel_1': 3, 'conv_activation_1': 'gelu', 'use_bn_1': False, 'conv_dropout_1': 0.3, 'pool_type_1': 'adaptive_avg', 'conv_filters_2': 128, 'conv_kernel_2': 5, 'conv_activation_2': 'relu', 'use_bn_2': True, 'conv_dropout_2': 0.4, 'global_pool': 'adaptive', 'dense_units_0': 128, 'dense_activation_0': 'leaky_relu', 'dense_dropout_0': 0.3, 'dense_units_1': 48, 'dense_activation_1': 'leaky_relu', 'dense_dropout_1': 0.4, 'dense_units_2': 48, 'dense_activation_2': 'leaky_relu', 'dense_dropout_2': 0.5}. Best is trial 4 with value: 0.7707995968169761.
+Best trial: 4. Best value: 0.7708:   9%|████                                         | 9/100 [01:35<11:21,  7.49s/it, 95.48/3600 seconds]
+🔍 Trial 9: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 82,500 params, 0.31MB
+🚀 Training model...
+❌ Trial 9 failed: Arguments `target` and `output` must have the same rank (ndim). Received: target.shape=(None, 4), output.shape=(None, 64, 4)
+[I 2025-10-16 13:47:54,979] Trial 9 finished with value: 0.0 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 2, 'conv_filters_0': 48, 'conv_kernel_0': 9, 'conv_activation_0': 'leaky_relu', 'use_bn_0': False, 'conv_dropout_0': 0.1, 'conv_filters_1': 64, 'conv_kernel_1': 3, 'conv_activation_1': 'leaky_relu', 'use_bn_1': False, 'conv_dropout_1': 0.5, 'pool_type_1': 'avg', 'conv_filters_2': 160, 'conv_kernel_2': 5, 'conv_activation_2': 'relu', 'use_bn_2': True, 'conv_dropout_2': 0.1, 'global_pool': 'adaptive', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.4, 'dense_units_1': 48, 'dense_activation_1': 'swish', 'dense_dropout_1': 0.5}. Best is trial 4 with value: 0.7707995968169761.
+Best trial: 4. Best value: 0.7708:  10%|████▍                                       | 10/100 [01:36<08:09,  5.43s/it, 96.32/3600 seconds]
+🔍 Trial 10: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 349,300 > 100,000
+[I 2025-10-16 13:47:55,775] Trial 10 pruned.                                                                                             
+Best trial: 4. Best value: 0.7708:  11%|████▊                                       | 11/100 [01:37<05:57,  4.01s/it, 97.11/3600 seconds]
+🔍 Trial 11: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 132,116 > 100,000
+[I 2025-10-16 13:47:56,525] Trial 11 pruned.                                                                                             
+Best trial: 4. Best value: 0.7708:  12%|█████▎                                      | 12/100 [01:37<04:25,  3.02s/it, 97.86/3600 seconds]
+🔍 Trial 12: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 26,884 params, 0.10MB
+🚀 Training model...
+❌ Trial 12 failed: Arguments `target` and `output` must have the same rank (ndim). Received: target.shape=(None, 4), output.shape=(None, 128, 4)
+[I 2025-10-16 13:47:57,361] Trial 12 finished with value: 0.0 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 3, 'conv_filters_0': 96, 'conv_kernel_0': 5, 'conv_activation_0': 'gelu', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 64, 'conv_kernel_1': 3, 'conv_activation_1': 'gelu', 'use_bn_1': True, 'conv_dropout_1': 0.5, 'pool_type_1': 'adaptive_avg', 'global_pool': 'adaptive', 'dense_units_0': 32, 'dense_activation_0': 'leaky_relu', 'dense_dropout_0': 0.3, 'dense_units_1': 32, 'dense_activation_1': 'leaky_relu', 'dense_dropout_1': 0.4, 'dense_units_2': 96, 'dense_activation_2': 'leaky_relu', 'dense_dropout_2': 0.5}. Best is trial 4 with value: 0.7707995968169761.
+Best trial: 4. Best value: 0.7708:  13%|█████▋                                      | 13/100 [01:38<03:25,  2.36s/it, 98.70/3600 seconds]
+🔍 Trial 13: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 88,164 params, 0.34MB
+🚀 Training model...
+❌ Trial 13 failed: Arguments `target` and `output` must have the same rank (ndim). Received: target.shape=(None, 4), output.shape=(None, 128, 4)
+[I 2025-10-16 13:47:58,250] Trial 13 finished with value: 0.0 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 3, 'conv_filters_0': 48, 'conv_kernel_0': 5, 'conv_activation_0': 'gelu', 'use_bn_0': True, 'conv_dropout_0': 0.5, 'conv_filters_1': 48, 'conv_kernel_1': 3, 'conv_activation_1': 'gelu', 'use_bn_1': False, 'conv_dropout_1': 0.4, 'pool_type_1': 'adaptive_avg', 'conv_filters_2': 192, 'conv_kernel_2': 7, 'conv_activation_2': 'gelu', 'use_bn_2': True, 'conv_dropout_2': 0.4, 'global_pool': 'adaptive', 'dense_units_0': 48, 'dense_activation_0': 'leaky_relu', 'dense_dropout_0': 0.3, 'dense_units_1': 48, 'dense_activation_1': 'leaky_relu', 'dense_dropout_1': 0.5, 'dense_units_2': 64, 'dense_activation_2': 'leaky_relu', 'dense_dropout_2': 0.3}. Best is trial 4 with value: 0.7707995968169761.
+Best trial: 4. Best value: 0.7708:  14%|██████▏                                     | 14/100 [01:39<02:44,  1.92s/it, 99.59/3600 seconds]
+🔍 Trial 14: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 36,820 params, 0.14MB
+🚀 Training model...
+
+Epoch 44: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 50.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 14:
+   Exact Match Accuracy: 0.955
+   Average F1-Score: 0.990
+   Parameters: 36,820
+   Model Size: 0.14MB
+   Inference Time: 29.50ms
+   Combined Score: 0.795
+[I 2025-10-16 13:48:56,035] Trial 14 finished with value: 0.7947950132625994 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 3, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 3, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'conv_filters_2': 128, 'conv_kernel_2': 5, 'conv_activation_2': 'relu', 'use_bn_2': True, 'conv_dropout_2': 0.4, 'global_pool': 'max', 'dense_units_0': 64, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.3, 'dense_units_1': 32, 'dense_activation_1': 'leaky_relu', 'dense_dropout_1': 0.4, 'dense_units_2': 48, 'dense_activation_2': 'swish', 'dense_dropout_2': 0.4}. Best is trial 14 with value: 0.7947950132625994.
+Best trial: 14. Best value: 0.794795:  15%|██████                                  | 15/100 [02:37<26:34, 18.76s/it, 157.37/3600 seconds]
+🔍 Trial 15: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 11,140 params, 0.04MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 48.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 15:
+   Exact Match Accuracy: 0.944
+   Average F1-Score: 0.983
+   Parameters: 11,140
+   Model Size: 0.04MB
+   Inference Time: 28.48ms
+   Combined Score: 0.839
+[I 2025-10-16 13:49:39,141] Trial 15 finished with value: 0.8387279575596817 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 2, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 3, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'conv_filters_2': 32, 'conv_kernel_2': 3, 'conv_activation_2': 'leaky_relu', 'use_bn_2': True, 'conv_dropout_2': 0.2, 'global_pool': 'max', 'dense_units_0': 64, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.3, 'dense_units_1': 32, 'dense_activation_1': 'leaky_relu', 'dense_dropout_1': 0.4}. Best is trial 15 with value: 0.8387279575596817.
+Best trial: 15. Best value: 0.838728:  16%|██████▍                                 | 16/100 [03:20<36:31, 26.09s/it, 200.48/3600 seconds]
+🔍 Trial 16: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 42,580 params, 0.16MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 50.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 16:
+   Exact Match Accuracy: 0.968
+   Average F1-Score: 0.993
+   Parameters: 42,580
+   Model Size: 0.16MB
+   Inference Time: 29.47ms
+   Combined Score: 0.793
+[I 2025-10-16 13:50:44,444] Trial 16 finished with value: 0.7925588328912467 and parameters: {'num_conv_layers': 4, 'num_dense_layers': 2, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 9, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'conv_filters_2': 48, 'conv_kernel_2': 3, 'conv_activation_2': 'relu', 'use_bn_2': False, 'conv_dropout_2': 0.2, 'conv_filters_3': 64, 'conv_kernel_3': 7, 'conv_activation_3': 'gelu', 'use_bn_3': True, 'conv_dropout_3': 0.5, 'pool_type_3': 'adaptive_avg', 'global_pool': 'max', 'dense_units_0': 64, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.3, 'dense_units_1': 32, 'dense_activation_1': 'leaky_relu', 'dense_dropout_1': 0.4}. Best is trial 15 with value: 0.8387279575596817.
+Best trial: 15. Best value: 0.838728:  17%|██████▊                                 | 17/100 [04:25<52:23, 37.88s/it, 265.78/3600 seconds]
+🔍 Trial 17: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,956 params, 0.04MB
+🚀 Training model...
+
+Epoch 46: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 47.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 17:
+   Exact Match Accuracy: 0.936
+   Average F1-Score: 0.983
+   Parameters: 9,956
+   Model Size: 0.04MB
+   Inference Time: 33.29ms
+   Combined Score: 0.836
+[I 2025-10-16 13:51:22,583] Trial 17 finished with value: 0.8355256657824933 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 2, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'max', 'dense_units_0': 64, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.3, 'dense_units_1': 32, 'dense_activation_1': 'swish', 'dense_dropout_1': 0.4}. Best is trial 15 with value: 0.8387279575596817.
+Best trial: 15. Best value: 0.838728:  18%|███████▏                                | 18/100 [05:03<51:52, 37.96s/it, 303.92/3600 seconds]
+🔍 Trial 18: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 12,164 params, 0.05MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 45.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 18:
+   Exact Match Accuracy: 0.902
+   Average F1-Score: 0.967
+   Parameters: 12,164
+   Model Size: 0.05MB
+   Inference Time: 32.57ms
+   Combined Score: 0.807
+[I 2025-10-16 13:52:03,709] Trial 18 finished with value: 0.8069717347480106 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 2, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'max', 'dense_units_0': 64, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5, 'dense_units_1': 64, 'dense_activation_1': 'swish', 'dense_dropout_1': 0.4}. Best is trial 15 with value: 0.8387279575596817.
+Best trial: 15. Best value: 0.838728:  19%|███████▌                                | 19/100 [05:45<52:31, 38.91s/it, 345.05/3600 seconds]
+🔍 Trial 19: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 14,372 params, 0.05MB
+🚀 Training model...
+
+Epoch 46: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 39.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 19:
+   Exact Match Accuracy: 0.918
+   Average F1-Score: 0.972
+   Parameters: 14,372
+   Model Size: 0.05MB
+   Inference Time: 31.20ms
+   Combined Score: 0.814
+[I 2025-10-16 13:52:45,932] Trial 19 finished with value: 0.8136963183023873 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 2, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'max', 'dense_units_0': 64, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.4, 'dense_units_1': 96, 'dense_activation_1': 'swish', 'dense_dropout_1': 0.4}. Best is trial 15 with value: 0.8387279575596817.
+Best trial: 15. Best value: 0.838728:  20%|████████                                | 20/100 [06:27<53:12, 39.90s/it, 387.27/3600 seconds]
+🔍 Trial 20: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 30,804 params, 0.12MB
+🚀 Training model...
+
+Epoch 40: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+
+Epoch 47: ReduceLROnPlateau reducing learning rate to 0.0002500000118743628.
+Epoch 48: early stopping
+Restoring model weights from the end of the best epoch: 33.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 20:
+   Exact Match Accuracy: 0.905
+   Average F1-Score: 0.977
+   Parameters: 30,804
+   Model Size: 0.12MB
+   Inference Time: 29.84ms
+   Combined Score: 0.772
+[I 2025-10-16 13:54:19,499] Trial 20 finished with value: 0.77154849867374 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 2, 'conv_filters_0': 160, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.5, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'swish', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'max', 'dense_units_0': 48, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.3, 'dense_units_1': 32, 'dense_activation_1': 'swish', 'dense_dropout_1': 0.3}. Best is trial 15 with value: 0.8387279575596817.
+Best trial: 15. Best value: 0.838728:  21%|███████▉                              | 21/100 [08:00<1:13:44, 56.01s/it, 480.84/3600 seconds]
+🔍 Trial 21: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 14,372 params, 0.05MB
+🚀 Training model...
+
+Epoch 46: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 39.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 21:
+   Exact Match Accuracy: 0.915
+   Average F1-Score: 0.974
+   Parameters: 14,372
+   Model Size: 0.05MB
+   Inference Time: 29.44ms
+   Combined Score: 0.812
+[I 2025-10-16 13:54:57,684] Trial 21 finished with value: 0.8118395543766579 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 2, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'max', 'dense_units_0': 64, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.4, 'dense_units_1': 96, 'dense_activation_1': 'swish', 'dense_dropout_1': 0.4}. Best is trial 15 with value: 0.8387279575596817.
+Best trial: 15. Best value: 0.838728:  22%|████████▎                             | 22/100 [08:39<1:05:51, 50.66s/it, 519.02/3600 seconds]
+🔍 Trial 22: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 14,372 params, 0.05MB
+🚀 Training model...
+
+Epoch 43: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+
+Epoch 50: ReduceLROnPlateau reducing learning rate to 0.0002500000118743628.
+Restoring model weights from the end of the best epoch: 36.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 22:
+   Exact Match Accuracy: 0.883
+   Average F1-Score: 0.967
+   Parameters: 14,372
+   Model Size: 0.05MB
+   Inference Time: 29.87ms
+   Combined Score: 0.790
+[I 2025-10-16 13:55:32,860] Trial 22 finished with value: 0.7895583872679044 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 2, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'max', 'dense_units_0': 64, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.4, 'dense_units_1': 96, 'dense_activation_1': 'swish', 'dense_dropout_1': 0.4}. Best is trial 15 with value: 0.8387279575596817.
+Best trial: 15. Best value: 0.838728:  23%|█████████▏                              | 23/100 [09:14<59:03, 46.01s/it, 554.20/3600 seconds]
+🔍 Trial 23: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 14,372 params, 0.05MB
+🚀 Training model...
+
+Epoch 44: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 37.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 23:
+   Exact Match Accuracy: 0.918
+   Average F1-Score: 0.975
+   Parameters: 14,372
+   Model Size: 0.05MB
+   Inference Time: 29.56ms
+   Combined Score: 0.814
+[I 2025-10-16 13:56:06,493] Trial 23 finished with value: 0.8136963183023873 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 2, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'max', 'dense_units_0': 64, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.4, 'dense_units_1': 96, 'dense_activation_1': 'swish', 'dense_dropout_1': 0.4}. Best is trial 15 with value: 0.8387279575596817.
+Best trial: 15. Best value: 0.838728:  24%|█████████▌                              | 24/100 [09:47<53:34, 42.30s/it, 587.83/3600 seconds]
+🔍 Trial 24: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 56,036 params, 0.21MB
+🚀 Training model...
+
+Epoch 40: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+
+Epoch 47: ReduceLROnPlateau reducing learning rate to 0.0002500000118743628.
+Epoch 48: early stopping
+Restoring model weights from the end of the best epoch: 33.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 24:
+   Exact Match Accuracy: 0.934
+   Average F1-Score: 0.984
+   Parameters: 56,036
+   Model Size: 0.21MB
+   Inference Time: 30.35ms
+   Combined Score: 0.742
+[I 2025-10-16 13:57:24,565] Trial 24 finished with value: 0.7415089018567639 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 2, 'conv_filters_0': 96, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.4, 'conv_filters_1': 96, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'max', 'dense_units_0': 64, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.4, 'dense_units_1': 32, 'dense_activation_1': 'swish', 'dense_dropout_1': 0.4}. Best is trial 15 with value: 0.8387279575596817.
+Best trial: 15. Best value: 0.838728:  25%|█████████▌                            | 25/100 [11:05<1:06:17, 53.03s/it, 665.91/3600 seconds]
+🔍 Trial 25: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 199,140 > 100,000
+[I 2025-10-16 13:57:25,358] Trial 25 pruned.                                                                                             
+Best trial: 15. Best value: 0.838728:  26%|██████████▍                             | 26/100 [11:06<46:04, 37.36s/it, 666.70/3600 seconds]
+🔍 Trial 26: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 123,924 > 100,000
+[I 2025-10-16 13:57:26,110] Trial 26 pruned.                                                                                             
+Best trial: 15. Best value: 0.838728:  27%|██████████▊                             | 27/100 [11:07<32:05, 26.38s/it, 667.45/3600 seconds]
+🔍 Trial 27: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 84,292 params, 0.32MB
+🚀 Training model...
+
+Epoch 32: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 50.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 27:
+   Exact Match Accuracy: 0.934
+   Average F1-Score: 0.980
+   Parameters: 84,292
+   Model Size: 0.32MB
+   Inference Time: 31.38ms
+   Combined Score: 0.685
+[I 2025-10-16 13:59:11,586] Trial 27 finished with value: 0.6849969018567639 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 2, 'conv_filters_0': 64, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 192, 'conv_kernel_1': 5, 'conv_activation_1': 'swish', 'use_bn_1': True, 'conv_dropout_1': 0.4, 'pool_type_1': 'avg', 'global_pool': 'max', 'dense_units_0': 64, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.4, 'dense_units_1': 128, 'dense_activation_1': 'swish', 'dense_dropout_1': 0.3}. Best is trial 15 with value: 0.8387279575596817.
+Best trial: 15. Best value: 0.838728:  28%|██████████▋                           | 28/100 [12:52<1:00:07, 50.11s/it, 772.93/3600 seconds]
+🔍 Trial 28: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 109,604 > 100,000
+[I 2025-10-16 13:59:12,393] Trial 28 pruned.                                                                                             
+Best trial: 15. Best value: 0.838728:  29%|███████████▌                            | 29/100 [12:53<41:47, 35.32s/it, 773.73/3600 seconds]
+🔍 Trial 29: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 47,156 params, 0.18MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 49.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 29:
+   Exact Match Accuracy: 0.995
+   Average F1-Score: 1.000
+   Parameters: 47,156
+   Model Size: 0.18MB
+   Inference Time: 38.08ms
+   Combined Score: 0.802
+[I 2025-10-16 14:00:17,161] Trial 29 finished with value: 0.8019744721485411 and parameters: {'num_conv_layers': 4, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': False, 'conv_dropout_0': 0.1, 'conv_filters_1': 32, 'conv_kernel_1': 9, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'max', 'conv_filters_2': 64, 'conv_kernel_2': 3, 'conv_activation_2': 'swish', 'use_bn_2': True, 'conv_dropout_2': 0.2, 'conv_filters_3': 48, 'conv_kernel_3': 9, 'conv_activation_3': 'leaky_relu', 'use_bn_3': False, 'conv_dropout_3': 0.3, 'pool_type_3': 'avg', 'global_pool': 'max', 'dense_units_0': 64, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.3}. Best is trial 15 with value: 0.8387279575596817.
+Best trial: 15. Best value: 0.838728:  30%|████████████                            | 30/100 [13:58<51:30, 44.15s/it, 838.50/3600 seconds]
+🔍 Trial 30: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,188 params, 0.04MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 46.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 30:
+   Exact Match Accuracy: 0.936
+   Average F1-Score: 0.980
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 36.33ms
+   Combined Score: 0.837
+[I 2025-10-16 14:00:55,522] Trial 30 finished with value: 0.8370616657824933 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 15 with value: 0.8387279575596817.
+Best trial: 15. Best value: 0.838728:  31%|████████████▍                           | 31/100 [14:36<48:46, 42.42s/it, 876.86/3600 seconds]
+🔍 Trial 31: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,188 params, 0.04MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 50.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 31:
+   Exact Match Accuracy: 0.952
+   Average F1-Score: 0.986
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 29.17ms
+   Combined Score: 0.848
+[I 2025-10-16 14:01:29,698] Trial 31 finished with value: 0.84820224933687 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  32%|████████████▊                           | 32/100 [15:11<45:16, 39.94s/it, 911.04/3600 seconds]
+🔍 Trial 32: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,188 params, 0.04MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 50.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 32:
+   Exact Match Accuracy: 0.947
+   Average F1-Score: 0.984
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 29.44ms
+   Combined Score: 0.844
+[I 2025-10-16 14:02:01,649] Trial 32 finished with value: 0.8444887214854111 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  33%|█████████████▏                          | 33/100 [15:42<41:55, 37.55s/it, 942.99/3600 seconds]
+🔍 Trial 33: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,188 params, 0.04MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 46.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 33:
+   Exact Match Accuracy: 0.952
+   Average F1-Score: 0.987
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 27.60ms
+   Combined Score: 0.848
+[I 2025-10-16 14:02:31,691] Trial 33 finished with value: 0.84820224933687 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.4, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.2, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  34%|█████████████▌                          | 34/100 [16:13<38:49, 35.29s/it, 973.03/3600 seconds]
+🔍 Trial 34: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 105,988 > 100,000
+[I 2025-10-16 14:02:32,415] Trial 34 pruned.                                                                                             
+Best trial: 31. Best value: 0.848202:  35%|██████████████                          | 35/100 [16:13<27:00, 24.92s/it, 973.75/3600 seconds]
+🔍 Trial 35: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 181,812 > 100,000
+[I 2025-10-16 14:02:33,132] Trial 35 pruned.                                                                                             
+Best trial: 31. Best value: 0.848202:  36%|██████████████▍                         | 36/100 [16:14<18:50, 17.66s/it, 974.47/3600 seconds]
+🔍 Trial 36: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 44,324 params, 0.17MB
+🚀 Training model...
+
+Epoch 26: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+
+Epoch 38: ReduceLROnPlateau reducing learning rate to 0.0002500000118743628.
+
+Epoch 46: ReduceLROnPlateau reducing learning rate to 0.0001250000059371814.
+Restoring model weights from the end of the best epoch: 49.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 36:
+   Exact Match Accuracy: 0.968
+   Average F1-Score: 0.991
+   Parameters: 44,324
+   Model Size: 0.17MB
+   Inference Time: 28.99ms
+   Combined Score: 0.789
+[I 2025-10-16 14:03:29,582] Trial 36 finished with value: 0.7890708328912467 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 9, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.4, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.2, 'pool_type_1': 'avg', 'conv_filters_2': 192, 'conv_kernel_2': 3, 'conv_activation_2': 'leaky_relu', 'use_bn_2': True, 'conv_dropout_2': 0.2, 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'swish', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  37%|██████████████▍                        | 37/100 [17:10<30:45, 29.30s/it, 1030.92/3600 seconds]
+🔍 Trial 37: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 27,796 params, 0.11MB
+🚀 Training model...
+
+Epoch 39: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 49.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 37:
+   Exact Match Accuracy: 0.963
+   Average F1-Score: 0.989
+   Parameters: 27,796
+   Model Size: 0.11MB
+   Inference Time: 28.95ms
+   Combined Score: 0.818
+[I 2025-10-16 14:04:15,349] Trial 37 finished with value: 0.8184133050397877 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 64, 'conv_kernel_0': 7, 'conv_activation_0': 'leaky_relu', 'use_bn_0': False, 'conv_dropout_0': 0.4, 'conv_filters_1': 48, 'conv_kernel_1': 7, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.2, 'pool_type_1': 'adaptive_avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  38%|██████████████▊                        | 38/100 [17:56<35:22, 34.24s/it, 1076.69/3600 seconds]
+🔍 Trial 38: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 195,988 > 100,000
+[I 2025-10-16 14:04:16,079] Trial 38 pruned.                                                                                             
+Best trial: 31. Best value: 0.848202:  39%|███████████████▏                       | 39/100 [17:57<24:35, 24.19s/it, 1077.42/3600 seconds]
+🔍 Trial 39: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 120,804 > 100,000
+[I 2025-10-16 14:04:16,804] Trial 39 pruned.                                                                                             
+Best trial: 31. Best value: 0.848202:  40%|███████████████▌                       | 40/100 [17:58<17:08, 17.15s/it, 1078.14/3600 seconds]
+🔍 Trial 40: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 399,460 > 100,000
+[I 2025-10-16 14:04:17,523] Trial 40 pruned.                                                                                             
+Best trial: 31. Best value: 0.848202:  41%|███████████████▉                       | 41/100 [17:58<12:00, 12.22s/it, 1078.86/3600 seconds]
+🔍 Trial 41: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,188 params, 0.04MB
+🚀 Training model...
+
+Epoch 23: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 49.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 41:
+   Exact Match Accuracy: 0.942
+   Average F1-Score: 0.981
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 30.00ms
+   Combined Score: 0.841
+[I 2025-10-16 14:04:49,409] Trial 41 finished with value: 0.8407751936339523 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  42%|████████████████▍                      | 42/100 [18:30<17:30, 18.12s/it, 1110.75/3600 seconds]
+🔍 Trial 42: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,188 params, 0.04MB
+🚀 Training model...
+
+Epoch 16: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+
+Epoch 48: ReduceLROnPlateau reducing learning rate to 0.0002500000118743628.
+Restoring model weights from the end of the best epoch: 49.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 42:
+   Exact Match Accuracy: 0.934
+   Average F1-Score: 0.985
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 28.98ms
+   Combined Score: 0.835
+[I 2025-10-16 14:05:21,840] Trial 42 finished with value: 0.8352049018567639 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  43%|████████████████▊                      | 43/100 [19:03<21:17, 22.41s/it, 1143.18/3600 seconds]
+🔍 Trial 43: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 10,756 params, 0.04MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 50.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 43:
+   Exact Match Accuracy: 0.939
+   Average F1-Score: 0.984
+   Parameters: 10,756
+   Model Size: 0.04MB
+   Inference Time: 27.19ms
+   Combined Score: 0.836
+[I 2025-10-16 14:05:53,886] Trial 43 finished with value: 0.8357824297082228 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 9, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.5, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 128, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  44%|█████████████████▏                     | 44/100 [19:35<23:36, 25.30s/it, 1175.22/3600 seconds]
+🔍 Trial 44: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 7,012 params, 0.03MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 44.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 44:
+   Exact Match Accuracy: 0.926
+   Average F1-Score: 0.977
+   Parameters: 7,012
+   Model Size: 0.03MB
+   Inference Time: 28.53ms
+   Combined Score: 0.834
+[I 2025-10-16 14:06:20,161] Trial 44 finished with value: 0.8339866100795755 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.1, 'conv_filters_1': 32, 'conv_kernel_1': 3, 'conv_activation_1': 'leaky_relu', 'use_bn_1': False, 'conv_dropout_1': 0.4, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'leaky_relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  45%|█████████████████▌                     | 45/100 [20:01<23:27, 25.59s/it, 1201.50/3600 seconds]
+🔍 Trial 45: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 235,348 > 100,000
+[I 2025-10-16 14:06:20,927] Trial 45 pruned.                                                                                             
+Best trial: 31. Best value: 0.848202:  46%|█████████████████▉                     | 46/100 [20:02<16:19, 18.15s/it, 1202.27/3600 seconds]
+🔍 Trial 46: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 13,444 params, 0.05MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 50.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 46:
+   Exact Match Accuracy: 0.942
+   Average F1-Score: 0.987
+   Parameters: 13,444
+   Model Size: 0.05MB
+   Inference Time: 30.01ms
+   Combined Score: 0.832
+[I 2025-10-16 14:06:57,044] Trial 46 finished with value: 0.8322631936339523 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'leaky_relu', 'use_bn_0': True, 'conv_dropout_0': 0.4, 'conv_filters_1': 64, 'conv_kernel_1': 3, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  47%|██████████████████▎                    | 47/100 [20:38<20:47, 23.54s/it, 1238.38/3600 seconds]
+🔍 Trial 47: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 48,628 params, 0.19MB
+🚀 Training model...
+
+Epoch 33: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 49.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 47:
+   Exact Match Accuracy: 0.942
+   Average F1-Score: 0.984
+   Parameters: 48,628
+   Model Size: 0.19MB
+   Inference Time: 29.56ms
+   Combined Score: 0.762
+[I 2025-10-16 14:08:28,870] Trial 47 finished with value: 0.7618951936339522 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 1, 'conv_filters_0': 192, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.2, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'leaky_relu', 'use_bn_1': False, 'conv_dropout_1': 0.5, 'pool_type_1': 'avg', 'conv_filters_2': 48, 'conv_kernel_2': 9, 'conv_activation_2': 'leaky_relu', 'use_bn_2': True, 'conv_dropout_2': 0.2, 'global_pool': 'avg', 'dense_units_0': 32, 'dense_activation_0': 'leaky_relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  48%|██████████████████▋                    | 48/100 [22:10<38:09, 44.02s/it, 1330.21/3600 seconds]
+🔍 Trial 48: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 217,956 > 100,000
+[I 2025-10-16 14:08:29,612] Trial 48 pruned.                                                                                             
+Best trial: 31. Best value: 0.848202:  49%|███████████████████                    | 49/100 [22:10<26:22, 31.04s/it, 1330.95/3600 seconds]
+🔍 Trial 49: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 15,028 params, 0.06MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 47.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 49:
+   Exact Match Accuracy: 0.950
+   Average F1-Score: 0.984
+   Parameters: 15,028
+   Model Size: 0.06MB
+   Inference Time: 28.44ms
+   Combined Score: 0.835
+[I 2025-10-16 14:09:17,099] Trial 49 finished with value: 0.8346654854111405 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 5, 'conv_activation_0': 'gelu', 'use_bn_0': True, 'conv_dropout_0': 0.5, 'conv_filters_1': 96, 'conv_kernel_1': 3, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'adaptive_avg', 'global_pool': 'avg', 'dense_units_0': 48, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  50%|███████████████████▌                   | 50/100 [22:58<29:58, 35.97s/it, 1378.44/3600 seconds]
+🔍 Trial 50: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 49,412 params, 0.19MB
+🚀 Training model...
+
+Epoch 28: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+
+Epoch 38: ReduceLROnPlateau reducing learning rate to 0.0002500000118743628.
+Restoring model weights from the end of the best epoch: 47.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 50:
+   Exact Match Accuracy: 0.958
+   Average F1-Score: 0.990
+   Parameters: 49,412
+   Model Size: 0.19MB
+   Inference Time: 28.00ms
+   Combined Score: 0.771
+[I 2025-10-16 14:10:27,832] Trial 50 finished with value: 0.7714677771883289 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 1, 'conv_filters_0': 64, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'gelu', 'use_bn_1': True, 'conv_dropout_1': 0.4, 'pool_type_1': 'avg', 'conv_filters_2': 192, 'conv_kernel_2': 3, 'conv_activation_2': 'swish', 'use_bn_2': True, 'conv_dropout_2': 0.5, 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'swish', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  51%|███████████████████▉                   | 51/100 [24:09<37:53, 46.40s/it, 1449.17/3600 seconds]
+🔍 Trial 51: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,188 params, 0.04MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 44.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 51:
+   Exact Match Accuracy: 0.931
+   Average F1-Score: 0.981
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 33.67ms
+   Combined Score: 0.833
+[I 2025-10-16 14:11:00,026] Trial 51 finished with value: 0.8333481379310345 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  52%|████████████████████▎                  | 52/100 [24:41<33:42, 42.14s/it, 1481.36/3600 seconds]
+🔍 Trial 52: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,188 params, 0.04MB
+🚀 Training model...
+
+Epoch 13: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 48.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 52:
+   Exact Match Accuracy: 0.928
+   Average F1-Score: 0.983
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 29.54ms
+   Combined Score: 0.831
+[I 2025-10-16 14:11:31,058] Trial 52 finished with value: 0.831491374005305 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  53%|████████████████████▋                  | 53/100 [25:12<30:23, 38.81s/it, 1512.40/3600 seconds]
+🔍 Trial 53: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,188 params, 0.04MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 50.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 53:
+   Exact Match Accuracy: 0.942
+   Average F1-Score: 0.984
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 27.23ms
+   Combined Score: 0.841
+[I 2025-10-16 14:12:01,299] Trial 53 finished with value: 0.8407751936339523 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  54%|█████████████████████                  | 54/100 [25:42<27:46, 36.24s/it, 1542.64/3600 seconds]
+🔍 Trial 54: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,188 params, 0.04MB
+🚀 Training model...
+
+Epoch 35: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 50.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 54:
+   Exact Match Accuracy: 0.931
+   Average F1-Score: 0.986
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 28.19ms
+   Combined Score: 0.833
+[I 2025-10-16 14:12:31,877] Trial 54 finished with value: 0.8333481379310345 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  55%|█████████████████████▍                 | 55/100 [26:13<25:54, 34.54s/it, 1573.22/3600 seconds]
+🔍 Trial 55: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,188 params, 0.04MB
+🚀 Training model...
+❌ Trial 55 failed: Arguments `target` and `output` must have the same rank (ndim). Received: target.shape=(None, 4), output.shape=(None, 64, 4)
+[I 2025-10-16 14:12:32,725] Trial 55 finished with value: 0.0 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'adaptive', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  56%|█████████████████████▊                 | 56/100 [26:14<17:55, 24.43s/it, 1574.06/3600 seconds]
+🔍 Trial 56: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 51,620 params, 0.20MB
+🚀 Training model...
+
+Epoch 49: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 50.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 56:
+   Exact Match Accuracy: 0.958
+   Average F1-Score: 0.987
+   Parameters: 51,620
+   Model Size: 0.20MB
+   Inference Time: 29.35ms
+   Combined Score: 0.767
+[I 2025-10-16 14:13:43,074] Trial 56 finished with value: 0.767051777188329 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 3, 'conv_filters_0': 160, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 64, 'conv_kernel_1': 3, 'conv_activation_1': 'relu', 'use_bn_1': False, 'conv_dropout_1': 0.3, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 32, 'dense_activation_0': 'leaky_relu', 'dense_dropout_0': 0.3, 'dense_units_1': 128, 'dense_activation_1': 'relu', 'dense_dropout_1': 0.3, 'dense_units_2': 96, 'dense_activation_2': 'relu', 'dense_dropout_2': 0.4}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  57%|██████████████████████▏                | 57/100 [27:24<27:22, 38.21s/it, 1644.41/3600 seconds]
+🔍 Trial 57: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 68,436 params, 0.26MB
+🚀 Training model...
+
+Epoch 28: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+
+Epoch 45: ReduceLROnPlateau reducing learning rate to 0.0002500000118743628.
+Restoring model weights from the end of the best epoch: 50.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 57:
+   Exact Match Accuracy: 0.976
+   Average F1-Score: 0.996
+   Parameters: 68,436
+   Model Size: 0.26MB
+   Inference Time: 31.68ms
+   Combined Score: 0.746
+[I 2025-10-16 14:15:34,652] Trial 57 finished with value: 0.7464171246684349 and parameters: {'num_conv_layers': 5, 'num_dense_layers': 1, 'conv_filters_0': 144, 'conv_kernel_0': 7, 'conv_activation_0': 'gelu', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'gelu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'conv_filters_2': 64, 'conv_kernel_2': 5, 'conv_activation_2': 'leaky_relu', 'use_bn_2': True, 'conv_dropout_2': 0.3, 'conv_filters_3': 32, 'conv_kernel_3': 9, 'conv_activation_3': 'leaky_relu', 'use_bn_3': True, 'conv_dropout_3': 0.2, 'pool_type_3': 'avg', 'conv_filters_4': 48, 'conv_kernel_4': 7, 'conv_activation_4': 'relu', 'use_bn_4': False, 'conv_dropout_4': 0.2, 'global_pool': 'avg', 'dense_units_0': 48, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  58%|██████████████████████▌                | 58/100 [29:15<42:09, 60.22s/it, 1755.99/3600 seconds]
+🔍 Trial 58: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 43,188 params, 0.16MB
+🚀 Training model...
+
+Epoch 37: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+
+Epoch 49: ReduceLROnPlateau reducing learning rate to 0.0002500000118743628.
+Restoring model weights from the end of the best epoch: 42.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 58:
+   Exact Match Accuracy: 0.968
+   Average F1-Score: 0.993
+   Parameters: 43,188
+   Model Size: 0.16MB
+   Inference Time: 30.80ms
+   Combined Score: 0.791
+[I 2025-10-16 14:16:42,798] Trial 58 finished with value: 0.7913428328912466 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.1, 'conv_filters_1': 144, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'max', 'global_pool': 'avg', 'dense_units_0': 128, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.3}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  59%|███████████████████████                | 59/100 [30:24<42:46, 62.60s/it, 1824.14/3600 seconds]
+🔍 Trial 59: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 228,916 > 100,000
+[I 2025-10-16 14:16:43,629] Trial 59 pruned.                                                                                             
+Best trial: 31. Best value: 0.848202:  60%|███████████████████████▍               | 60/100 [30:24<29:22, 44.07s/it, 1824.97/3600 seconds]
+🔍 Trial 60: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 113,092 > 100,000
+[I 2025-10-16 14:16:44,440] Trial 60 pruned.                                                                                             
+Best trial: 31. Best value: 0.848202:  61%|███████████████████████▊               | 61/100 [30:25<20:12, 31.09s/it, 1825.78/3600 seconds]
+🔍 Trial 61: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,188 params, 0.04MB
+🚀 Training model...
+
+Epoch 24: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 50.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 61:
+   Exact Match Accuracy: 0.952
+   Average F1-Score: 0.985
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 36.87ms
+   Combined Score: 0.848
+[I 2025-10-16 14:17:21,399] Trial 61 finished with value: 0.84820224933687 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  62%|████████████████████████▏              | 62/100 [31:02<20:48, 32.85s/it, 1862.74/3600 seconds]
+🔍 Trial 62: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,188 params, 0.04MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 50.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 62:
+   Exact Match Accuracy: 0.944
+   Average F1-Score: 0.984
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 29.28ms
+   Combined Score: 0.843
+[I 2025-10-16 14:17:59,912] Trial 62 finished with value: 0.8426319575596817 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  63%|████████████████████████▌              | 63/100 [31:41<21:18, 34.55s/it, 1901.25/3600 seconds]
+🔍 Trial 63: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,188 params, 0.04MB
+🚀 Training model...
+
+Epoch 26: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 48.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 63:
+   Exact Match Accuracy: 0.936
+   Average F1-Score: 0.982
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 29.39ms
+   Combined Score: 0.837
+[I 2025-10-16 14:18:37,642] Trial 63 finished with value: 0.8370616657824933 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  64%|████████████████████████▉              | 64/100 [32:18<21:18, 35.50s/it, 1938.98/3600 seconds]
+🔍 Trial 64: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,188 params, 0.04MB
+🚀 Training model...
+
+Epoch 40: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 48.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 64:
+   Exact Match Accuracy: 0.947
+   Average F1-Score: 0.984
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 31.74ms
+   Combined Score: 0.844
+[I 2025-10-16 14:19:14,685] Trial 64 finished with value: 0.8444887214854111 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  65%|█████████████████████████▎             | 65/100 [32:56<20:58, 35.97s/it, 1976.02/3600 seconds]
+🔍 Trial 65: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 13,364 params, 0.05MB
+🚀 Training model...
+
+Epoch 22: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 49.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 65:
+   Exact Match Accuracy: 0.944
+   Average F1-Score: 0.984
+   Parameters: 13,364
+   Model Size: 0.05MB
+   Inference Time: 27.83ms
+   Combined Score: 0.834
+[I 2025-10-16 14:19:54,416] Trial 65 finished with value: 0.8342799575596817 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 48, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  66%|█████████████████████████▋             | 66/100 [33:35<21:01, 37.10s/it, 2015.75/3600 seconds]
+🔍 Trial 66: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,188 params, 0.04MB
+🚀 Training model...
+
+Epoch 50: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 43.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 66:
+   Exact Match Accuracy: 0.942
+   Average F1-Score: 0.983
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 27.49ms
+   Combined Score: 0.841
+[I 2025-10-16 14:20:28,107] Trial 66 finished with value: 0.8407751936339523 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.5, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  67%|██████████████████████████▏            | 67/100 [34:09<19:50, 36.07s/it, 2049.45/3600 seconds]
+🔍 Trial 67: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 25,604 params, 0.10MB
+🚀 Training model...
+
+Epoch 26: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 46.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 67:
+   Exact Match Accuracy: 0.939
+   Average F1-Score: 0.982
+   Parameters: 25,604
+   Model Size: 0.10MB
+   Inference Time: 32.26ms
+   Combined Score: 0.806
+[I 2025-10-16 14:21:37,388] Trial 67 finished with value: 0.8060864297082229 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 128, 'conv_kernel_0': 3, 'conv_activation_0': 'swish', 'use_bn_0': True, 'conv_dropout_0': 0.4, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'leaky_relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  68%|██████████████████████████▌            | 68/100 [35:18<24:33, 46.04s/it, 2118.73/3600 seconds]
+🔍 Trial 68: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,316 params, 0.04MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 49.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 68:
+   Exact Match Accuracy: 0.923
+   Average F1-Score: 0.982
+   Parameters: 9,316
+   Model Size: 0.04MB
+   Inference Time: 28.46ms
+   Combined Score: 0.828
+[I 2025-10-16 14:22:05,095] Trial 68 finished with value: 0.8275218461538462 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 9, 'conv_activation_0': 'swish', 'use_bn_0': False, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': False, 'conv_dropout_1': 0.2, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'leaky_relu', 'dense_dropout_0': 0.5}. Best is trial 31 with value: 0.84820224933687.
+Best trial: 31. Best value: 0.848202:  69%|██████████████████████████▉            | 69/100 [35:46<20:56, 40.54s/it, 2146.43/3600 seconds]
+🔍 Trial 69: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,188 params, 0.04MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 50.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 69:
+   Exact Match Accuracy: 0.963
+   Average F1-Score: 0.993
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 27.94ms
+   Combined Score: 0.856
+[I 2025-10-16 14:22:39,412] Trial 69 finished with value: 0.8556293050397877 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  70%|███████████████████████████▎           | 70/100 [36:20<19:20, 38.67s/it, 2180.75/3600 seconds]
+🔍 Trial 70: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 425,924 > 100,000
+[I 2025-10-16 14:22:40,196] Trial 70 pruned.                                                                                             
+Best trial: 69. Best value: 0.855629:  71%|███████████████████████████▋           | 71/100 [36:21<13:11, 27.30s/it, 2181.53/3600 seconds]
+🔍 Trial 71: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,188 params, 0.04MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 49.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 71:
+   Exact Match Accuracy: 0.960
+   Average F1-Score: 0.991
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 27.64ms
+   Combined Score: 0.854
+[I 2025-10-16 14:23:12,677] Trial 71 finished with value: 0.8537725411140583 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  72%|████████████████████████████           | 72/100 [36:54<13:28, 28.86s/it, 2214.02/3600 seconds]
+🔍 Trial 72: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,188 params, 0.04MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 49.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 72:
+   Exact Match Accuracy: 0.960
+   Average F1-Score: 0.989
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 28.11ms
+   Combined Score: 0.854
+[I 2025-10-16 14:23:42,494] Trial 72 finished with value: 0.8537725411140583 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  73%|████████████████████████████▍          | 73/100 [37:23<13:06, 29.15s/it, 2243.83/3600 seconds]
+🔍 Trial 73: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,188 params, 0.04MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 49.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 73:
+   Exact Match Accuracy: 0.958
+   Average F1-Score: 0.990
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 31.42ms
+   Combined Score: 0.852
+[I 2025-10-16 14:24:13,934] Trial 73 finished with value: 0.8519157771883289 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  74%|████████████████████████████▊          | 74/100 [37:55<12:55, 29.83s/it, 2275.27/3600 seconds]
+🔍 Trial 74: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,188 params, 0.04MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 45.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 74:
+   Exact Match Accuracy: 0.958
+   Average F1-Score: 0.990
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 30.14ms
+   Combined Score: 0.852
+[I 2025-10-16 14:24:44,966] Trial 74 finished with value: 0.8519157771883289 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  75%|█████████████████████████████▎         | 75/100 [38:26<12:34, 30.19s/it, 2306.30/3600 seconds]
+🔍 Trial 75: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 32,036 params, 0.12MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 49.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 75:
+   Exact Match Accuracy: 0.973
+   Average F1-Score: 0.995
+   Parameters: 32,036
+   Model Size: 0.12MB
+   Inference Time: 31.51ms
+   Combined Score: 0.817
+[I 2025-10-16 14:25:33,773] Trial 75 finished with value: 0.8173603607427056 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.4, 'conv_filters_1': 96, 'conv_kernel_1': 7, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  76%|█████████████████████████████▋         | 76/100 [39:15<14:18, 35.78s/it, 2355.11/3600 seconds]
+🔍 Trial 76: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 26,260 params, 0.10MB
+🚀 Training model...
+
+Epoch 39: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 48.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 76:
+   Exact Match Accuracy: 0.952
+   Average F1-Score: 0.987
+   Parameters: 26,260
+   Model Size: 0.10MB
+   Inference Time: 27.07ms
+   Combined Score: 0.814
+[I 2025-10-16 14:26:04,554] Trial 76 finished with value: 0.8140582493368701 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 3, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 48, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5, 'dense_units_1': 128, 'dense_activation_1': 'relu', 'dense_dropout_1': 0.3, 'dense_units_2': 96, 'dense_activation_2': 'swish', 'dense_dropout_2': 0.5}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  77%|██████████████████████████████         | 77/100 [39:45<13:08, 34.28s/it, 2385.89/3600 seconds]
+🔍 Trial 77: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 12,292 params, 0.05MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 50.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 77:
+   Exact Match Accuracy: 0.960
+   Average F1-Score: 0.990
+   Parameters: 12,292
+   Model Size: 0.05MB
+   Inference Time: 38.55ms
+   Combined Score: 0.848
+[I 2025-10-16 14:26:45,816] Trial 77 finished with value: 0.8475645411140583 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 64, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'swish', 'use_bn_1': True, 'conv_dropout_1': 0.2, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 32, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.4}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  78%|██████████████████████████████▍        | 78/100 [40:27<13:20, 36.37s/it, 2427.15/3600 seconds]
+🔍 Trial 78: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 234,820 > 100,000
+[I 2025-10-16 14:26:46,559] Trial 78 pruned.                                                                                             
+Best trial: 69. Best value: 0.855629:  79%|██████████████████████████████▊        | 79/100 [40:27<08:59, 25.68s/it, 2427.90/3600 seconds]
+🔍 Trial 79: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 40,900 params, 0.16MB
+🚀 Training model...
+❌ Trial 79 failed: Arguments `target` and `output` must have the same rank (ndim). Received: target.shape=(None, 4), output.shape=(None, 64, 4)
+[I 2025-10-16 14:26:47,357] Trial 79 finished with value: 0.0 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 144, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': False, 'conv_dropout_0': 0.3, 'conv_filters_1': 48, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'avg', 'global_pool': 'adaptive', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  80%|███████████████████████████████▏       | 80/100 [40:28<06:04, 18.22s/it, 2428.70/3600 seconds]
+🔍 Trial 80: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 75,652 params, 0.29MB
+🚀 Training model...
+
+Epoch 43: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 46.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 80:
+   Exact Match Accuracy: 0.979
+   Average F1-Score: 0.995
+   Parameters: 75,652
+   Model Size: 0.29MB
+   Inference Time: 28.68ms
+   Combined Score: 0.734
+[I 2025-10-16 14:28:08,399] Trial 80 finished with value: 0.7338418885941643 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 5, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.2, 'conv_filters_1': 192, 'conv_kernel_1': 9, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.1, 'pool_type_1': 'adaptive_avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  81%|███████████████████████████████▌       | 81/100 [41:49<11:44, 37.07s/it, 2509.74/3600 seconds]
+🔍 Trial 81: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 12,292 params, 0.05MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 49.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 81:
+   Exact Match Accuracy: 0.950
+   Average F1-Score: 0.987
+   Parameters: 12,292
+   Model Size: 0.05MB
+   Inference Time: 28.78ms
+   Combined Score: 0.840
+[I 2025-10-16 14:28:49,051] Trial 81 finished with value: 0.8401374854111405 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 64, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'swish', 'use_bn_1': True, 'conv_dropout_1': 0.2, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 32, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.4}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  82%|███████████████████████████████▉       | 82/100 [42:30<11:26, 38.14s/it, 2550.39/3600 seconds]
+🔍 Trial 82: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 12,292 params, 0.05MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 46.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 82:
+   Exact Match Accuracy: 0.966
+   Average F1-Score: 0.989
+   Parameters: 12,292
+   Model Size: 0.05MB
+   Inference Time: 29.39ms
+   Combined Score: 0.851
+[I 2025-10-16 14:29:29,542] Trial 82 finished with value: 0.8512780689655173 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 64, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'swish', 'use_bn_1': True, 'conv_dropout_1': 0.2, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 32, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.4}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  83%|████████████████████████████████▎      | 83/100 [43:10<11:00, 38.85s/it, 2590.88/3600 seconds]
+🔍 Trial 83: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 12,292 params, 0.05MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 48.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 83:
+   Exact Match Accuracy: 0.971
+   Average F1-Score: 0.991
+   Parameters: 12,292
+   Model Size: 0.05MB
+   Inference Time: 30.60ms
+   Combined Score: 0.855
+[I 2025-10-16 14:30:15,803] Trial 83 finished with value: 0.8549915968169761 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 64, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'swish', 'use_bn_1': True, 'conv_dropout_1': 0.2, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 32, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.4}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  84%|████████████████████████████████▊      | 84/100 [43:57<10:57, 41.07s/it, 2637.14/3600 seconds]
+🔍 Trial 84: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 12,292 params, 0.05MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 46.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 84:
+   Exact Match Accuracy: 0.958
+   Average F1-Score: 0.988
+   Parameters: 12,292
+   Model Size: 0.05MB
+   Inference Time: 30.77ms
+   Combined Score: 0.846
+[I 2025-10-16 14:31:04,885] Trial 84 finished with value: 0.8457077771883289 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 64, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'swish', 'use_bn_1': True, 'conv_dropout_1': 0.2, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 32, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.4}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  85%|█████████████████████████████████▏     | 85/100 [44:46<10:52, 43.47s/it, 2686.22/3600 seconds]
+🔍 Trial 85: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 23,716 params, 0.09MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 47.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 85:
+   Exact Match Accuracy: 0.950
+   Average F1-Score: 0.985
+   Parameters: 23,716
+   Model Size: 0.09MB
+   Inference Time: 34.29ms
+   Combined Score: 0.817
+[I 2025-10-16 14:32:10,251] Trial 85 finished with value: 0.8172894854111405 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 64, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.4, 'conv_filters_1': 64, 'conv_kernel_1': 5, 'conv_activation_1': 'swish', 'use_bn_1': True, 'conv_dropout_1': 0.2, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 32, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.4}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  86%|█████████████████████████████████▌     | 86/100 [45:51<11:40, 50.04s/it, 2751.59/3600 seconds]
+🔍 Trial 86: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 57,348 params, 0.22MB
+🚀 Training model...
+
+Epoch 37: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 48.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 86:
+   Exact Match Accuracy: 0.955
+   Average F1-Score: 0.987
+   Parameters: 57,348
+   Model Size: 0.22MB
+   Inference Time: 30.36ms
+   Combined Score: 0.754
+[I 2025-10-16 14:33:30,050] Trial 86 finished with value: 0.7537390132625994 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 64, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 160, 'conv_kernel_1': 5, 'conv_activation_1': 'swish', 'use_bn_1': False, 'conv_dropout_1': 0.2, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 32, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.4}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  87%|█████████████████████████████████▉     | 87/100 [47:11<12:46, 58.97s/it, 2831.39/3600 seconds]
+🔍 Trial 87: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 53,124 params, 0.20MB
+🚀 Training model...
+
+Epoch 47: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 49.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 87:
+   Exact Match Accuracy: 0.966
+   Average F1-Score: 0.996
+   Parameters: 53,124
+   Model Size: 0.20MB
+   Inference Time: 30.41ms
+   Combined Score: 0.770
+[I 2025-10-16 14:34:40,261] Trial 87 finished with value: 0.7696140689655173 and parameters: {'num_conv_layers': 4, 'num_dense_layers': 1, 'conv_filters_0': 64, 'conv_kernel_0': 9, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.5, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'swish', 'use_bn_1': True, 'conv_dropout_1': 0.2, 'pool_type_1': 'avg', 'conv_filters_2': 64, 'conv_kernel_2': 9, 'conv_activation_2': 'relu', 'use_bn_2': False, 'conv_dropout_2': 0.3, 'conv_filters_3': 64, 'conv_kernel_3': 5, 'conv_activation_3': 'relu', 'use_bn_3': False, 'conv_dropout_3': 0.3, 'pool_type_3': 'max', 'global_pool': 'avg', 'dense_units_0': 32, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.4}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  88%|██████████████████████████████████▎    | 88/100 [48:21<12:28, 62.34s/it, 2901.61/3600 seconds]
+🔍 Trial 88: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 103,316 > 100,000
+[I 2025-10-16 14:34:41,025] Trial 88 pruned.                                                                                             
+Best trial: 69. Best value: 0.855629:  89%|██████████████████████████████████▋    | 89/100 [48:22<08:02, 43.87s/it, 2902.36/3600 seconds]
+🔍 Trial 89: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 15,844 params, 0.06MB
+🚀 Training model...
+
+Epoch 44: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 47.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 89:
+   Exact Match Accuracy: 0.960
+   Average F1-Score: 0.993
+   Parameters: 15,844
+   Model Size: 0.06MB
+   Inference Time: 28.56ms
+   Combined Score: 0.840
+[I 2025-10-16 14:35:33,789] Trial 89 finished with value: 0.8404605411140583 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 64, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'swish', 'use_bn_1': True, 'conv_dropout_1': 0.2, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 128, 'dense_activation_0': 'leaky_relu', 'dense_dropout_0': 0.4}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  90%|███████████████████████████████████    | 90/100 [49:15<07:45, 46.54s/it, 2955.13/3600 seconds]
+🔍 Trial 90: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 20,372 params, 0.08MB
+🚀 Training model...
+
+Epoch 35: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+
+Epoch 47: ReduceLROnPlateau reducing learning rate to 0.0002500000118743628.
+Restoring model weights from the end of the best epoch: 49.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 90:
+   Exact Match Accuracy: 0.942
+   Average F1-Score: 0.983
+   Parameters: 20,372
+   Model Size: 0.08MB
+   Inference Time: 27.67ms
+   Combined Score: 0.818
+[I 2025-10-16 14:36:14,422] Trial 90 finished with value: 0.8184071936339523 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 3, 'conv_filters_0': 48, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'leaky_relu', 'use_bn_1': True, 'conv_dropout_1': 0.5, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 32, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.4, 'dense_units_1': 64, 'dense_activation_1': 'relu', 'dense_dropout_1': 0.5, 'dense_units_2': 128, 'dense_activation_2': 'relu', 'dense_dropout_2': 0.3}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  91%|███████████████████████████████████▍   | 91/100 [49:55<06:42, 44.77s/it, 2995.76/3600 seconds]
+🔍 Trial 91: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,188 params, 0.04MB
+🚀 Training model...
+
+Epoch 45: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 47.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 91:
+   Exact Match Accuracy: 0.958
+   Average F1-Score: 0.990
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 26.93ms
+   Combined Score: 0.852
+[I 2025-10-16 14:36:45,034] Trial 91 finished with value: 0.8519157771883289 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.2, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  92%|███████████████████████████████████▉   | 92/100 [50:26<05:24, 40.52s/it, 3026.37/3600 seconds]
+🔍 Trial 92: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,188 params, 0.04MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 49.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 92:
+   Exact Match Accuracy: 0.952
+   Average F1-Score: 0.989
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 28.03ms
+   Combined Score: 0.848
+[I 2025-10-16 14:37:15,766] Trial 92 finished with value: 0.84820224933687 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'swish', 'use_bn_1': True, 'conv_dropout_1': 0.2, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  93%|████████████████████████████████████▎  | 93/100 [50:57<04:23, 37.58s/it, 3057.10/3600 seconds]
+🔍 Trial 93: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 25,604 params, 0.10MB
+🚀 Training model...
+
+Epoch 31: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 44.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 93:
+   Exact Match Accuracy: 0.976
+   Average F1-Score: 0.992
+   Parameters: 25,604
+   Model Size: 0.10MB
+   Inference Time: 29.94ms
+   Combined Score: 0.832
+[I 2025-10-16 14:38:18,915] Trial 93 finished with value: 0.832081124668435 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 128, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.2, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.4}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  94%|████████████████████████████████████▋  | 94/100 [52:00<04:31, 45.25s/it, 3120.25/3600 seconds]
+🔍 Trial 94: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 9,188 params, 0.04MB
+🚀 Training model...
+
+Epoch 44: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Restoring model weights from the end of the best epoch: 46.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 94:
+   Exact Match Accuracy: 0.950
+   Average F1-Score: 0.985
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 28.22ms
+   Combined Score: 0.846
+[I 2025-10-16 14:38:51,237] Trial 94 finished with value: 0.8463454854111405 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'relu', 'use_bn_1': True, 'conv_dropout_1': 0.2, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 96, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  95%|█████████████████████████████████████  | 95/100 [52:32<03:26, 41.37s/it, 3152.58/3600 seconds]
+🔍 Trial 95: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 6,820 params, 0.03MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 49.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 95:
+   Exact Match Accuracy: 0.952
+   Average F1-Score: 0.987
+   Parameters: 6,820
+   Model Size: 0.03MB
+   Inference Time: 31.85ms
+   Combined Score: 0.853
+[I 2025-10-16 14:39:28,779] Trial 95 finished with value: 0.85293824933687 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.4, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'gelu', 'use_bn_1': True, 'conv_dropout_1': 0.2, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 32, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  96%|█████████████████████████████████████▍ | 96/100 [53:10<02:40, 40.22s/it, 3190.12/3600 seconds]
+🔍 Trial 96: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 225,476 > 100,000
+[I 2025-10-16 14:39:29,609] Trial 96 pruned.                                                                                             
+Best trial: 69. Best value: 0.855629:  97%|█████████████████████████████████████▊ | 97/100 [53:10<01:25, 28.41s/it, 3190.95/3600 seconds]
+🔍 Trial 97: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 25,604 params, 0.10MB
+🚀 Training model...
+❌ Trial 97 failed: Arguments `target` and `output` must have the same rank (ndim). Received: target.shape=(None, 4), output.shape=(None, 64, 4)
+[I 2025-10-16 14:39:30,496] Trial 97 finished with value: 0.0 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': False, 'conv_dropout_0': 0.3, 'conv_filters_1': 128, 'conv_kernel_1': 5, 'conv_activation_1': 'gelu', 'use_bn_1': True, 'conv_dropout_1': 0.4, 'pool_type_1': 'avg', 'global_pool': 'adaptive', 'dense_units_0': 32, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629:  98%|██████████████████████████████████████▏| 98/100 [53:11<00:40, 20.15s/it, 3191.83/3600 seconds]
+🔍 Trial 98: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+❌ Too many parameters: 173,252 > 100,000
+[I 2025-10-16 14:39:31,238] Trial 98 pruned.                                                                                             
+Best trial: 69. Best value: 0.855629:  99%|██████████████████████████████████████▌| 99/100 [53:12<00:14, 14.33s/it, 3192.58/3600 seconds]
+🔍 Trial 99: Starting architecture search...
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Architecture valid: 6,820 params, 0.03MB
+🚀 Training model...
+Restoring model weights from the end of the best epoch: 47.
+📊 Evaluating model...
+⏱️  Measuring inference time...
+📈 Results for Trial 99:
+   Exact Match Accuracy: 0.942
+   Average F1-Score: 0.982
+   Parameters: 6,820
+   Model Size: 0.03MB
+   Inference Time: 30.91ms
+   Combined Score: 0.846
+[I 2025-10-16 14:40:09,837] Trial 99 finished with value: 0.8455111936339522 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'conv_filters_0': 32, 'conv_kernel_0': 3, 'conv_activation_0': 'relu', 'use_bn_0': True, 'conv_dropout_0': 0.3, 'conv_filters_1': 32, 'conv_kernel_1': 5, 'conv_activation_1': 'gelu', 'use_bn_1': True, 'conv_dropout_1': 0.3, 'pool_type_1': 'avg', 'global_pool': 'avg', 'dense_units_0': 32, 'dense_activation_0': 'relu', 'dense_dropout_0': 0.5}. Best is trial 69 with value: 0.8556293050397877.
+Best trial: 69. Best value: 0.855629: 100%|██████████████████████████████████████| 100/100 [53:51<00:00, 32.31s/it, 3231.18/3600 seconds]
+
+🎉 NAS Search completed!
+⏱️  Total time: 0.90 hours
+🔍 Completed trials: 100
+
+📊 Analyzing NAS search results...
+
+🏆 Best Architecture Found:
+   Combined Score: 0.856
+   Exact Match Accuracy: 0.963
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 27.94ms
+
+🏗️  Best Architecture:
+   Conv Layers: 2
+   Dense Layers: 1
+   Global Pooling: avg
+
+📈 Performance Distribution:
+   Accuracy - Min: 0.000, Max: 0.995, Mean: 0.858
+   Parameters - Min: 0, Max: 84,292, Mean: 20,096
+
+📊 Analyzing NAS search results...
+
+🏆 Best Architecture Found:
+   Combined Score: 0.856
+   Exact Match Accuracy: 0.963
+   Parameters: 9,188
+   Model Size: 0.04MB
+   Inference Time: 27.94ms
+
+🏗️  Best Architecture:
+   Conv Layers: 2
+   Dense Layers: 1
+   Global Pooling: avg
+
+📈 Performance Distribution:
+   Accuracy - Min: 0.000, Max: 0.995, Mean: 0.858
+   Parameters - Min: 0, Max: 84,292, Mean: 20,096
+💾 NAS results saved to results/nas_search_results.json
+💾 NAS study saved to results/nas_search_results_study.pkl
+💾 NAS results saved to results/nas_search_results.json
+
+🎉 Full NAS search completed!
+Duration: 0.90 hours
+Best score: 0.856
+Best accuracy: 0.9628647214854111
+Best parameters: 9,188
+
+🏆 Training best NAS architecture for final evaluation...
+🔄 Loading datasets...
+📊 Loaded 1,758 samples from sdr_wifi_train.h5
+📊 Loaded 377 samples from sdr_wifi_val.h5
+📊 Loaded 377 samples from sdr_wifi_test.h5
+✅ All datasets loaded successfully!
+🔧 Applying data augmentation (factor: 3x)...
+✅ Data augmentation completed: 1,758 → 5,274 samples
+✅ Built best architecture: 9,188 parameters
+🚀 Training for 100 epochs...
+
+Epoch 43: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+
+Epoch 55: ReduceLROnPlateau reducing learning rate to 0.0002500000118743628.
+
+Epoch 62: ReduceLROnPlateau reducing learning rate to 0.0001250000059371814.
+Epoch 63: early stopping
+Restoring model weights from the end of the best epoch: 48.
+📊 Final evaluation...
+
+🎉 Final Model Results:
+   Exact Match Accuracy: 0.966
+   Average F1-Score: 0.994
+   Average AUC: 1.000
+   Parameters: 9,188
+   Model Size: 0.04MB
+WARNING:absl:You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+💾 Final model saved to /Users/jaime07ag/Library/Mobile Documents/com~apple~CloudDocs/Downloads/Elva/Spectrum_Sensing_NAS/config/../models/nas_final_model.h5
+📊 Running NAS evaluation...
+📊 Neural Architecture Search Evaluation
+==================================================
+WARNING:absl:Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+✅ Loaded best NAS model from /Users/jaime07ag/Library/Mobile Documents/com~apple~CloudDocs/Downloads/Elva/Spectrum_Sensing_NAS/code/../config/../models/nas_final_model.h5
+✅ Loaded NAS results from /Users/jaime07ag/Library/Mobile Documents/com~apple~CloudDocs/Downloads/Elva/Spectrum_Sensing_NAS/code/../config/../results/nas_search_results.json
+📊 Running comprehensive NAS model evaluation...
+🔄 Loading datasets...
+📊 Loaded 1,758 samples from sdr_wifi_train.h5
+📊 Loaded 377 samples from sdr_wifi_val.h5
+📊 Loaded 377 samples from sdr_wifi_test.h5
+✅ All datasets loaded successfully!
+🔮 Generating predictions...
+
+ 1/12 ━━━━━━━━━━━━━━━━━━━━ 1s 95ms/step
+12/12 ━━━━━━━━━━━━━━━━━━━━ 0s 5ms/step 
+12/12 ━━━━━━━━━━━━━━━━━━━━ 0s 6ms/step
+/Users/jaime07ag/Library/Mobile Documents/com~apple~CloudDocs/Downloads/Elva/Spectrum_Sensing_NAS/venv/lib/python3.9/site-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Jaccard is ill-defined and being set to 0.0 in samples with no true or predicted labels. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+/Users/jaime07ag/Library/Mobile Documents/com~apple~CloudDocs/Downloads/Elva/Spectrum_Sensing_NAS/venv/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1188: UndefinedMetricWarning: No positive samples in y_true, true positive value should be meaningless
+  warnings.warn(
+📈 Calculating global metrics...
+📊 Analyzing per-channel performance...
+📊 Creating visualization plots...
+✅ Plots saved to /Users/jaime07ag/Library/Mobile Documents/com~apple~CloudDocs/Downloads/Elva/Spectrum_Sensing_NAS/code/../config/../results
+📊 Creating comparison plot with baseline CNN...
+✅ Comparison plot saved to /Users/jaime07ag/Library/Mobile Documents/com~apple~CloudDocs/Downloads/Elva/Spectrum_Sensing_NAS/code/../config/../results
+📝 Generating comprehensive NAS evaluation report...
+📝 NAS report saved to /Users/jaime07ag/Library/Mobile Documents/com~apple~CloudDocs/Downloads/Elva/Spectrum_Sensing_NAS/code/../config/../results/nas_evaluation_report.md
+💾 NAS results saved to /Users/jaime07ag/Library/Mobile Documents/com~apple~CloudDocs/Downloads/Elva/Spectrum_Sensing_NAS/code/../config/../results/nas_comprehensive_evaluation.json
+
+🎉 NAS evaluation completed successfully!
+📁 Results saved in:
+   - /Users/jaime07ag/Library/Mobile Documents/com~apple~CloudDocs/Downloads/Elva/Spectrum_Sensing_NAS/code/../config/../results/nas_evaluation_report.md
+   - /Users/jaime07ag/Library/Mobile Documents/com~apple~CloudDocs/Downloads/Elva/Spectrum_Sensing_NAS/code/../config/../results/nas_comprehensive_evaluation.json
+   - /Users/jaime07ag/Library/Mobile Documents/com~apple~CloudDocs/Downloads/Elva/Spectrum_Sensing_NAS/code/../config/../results/*.png
+(venv) jaime07ag@MacBook-Pro-de-Jaime Spectrum_Sensing_NAS % 

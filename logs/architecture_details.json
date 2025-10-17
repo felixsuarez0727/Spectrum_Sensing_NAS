@@ -1,0 +1,103 @@
+{
+  "total_parameters": 9188,
+  "trainable_parameters": 9188,
+  "non_trainable_parameters": 0,
+  "layers": [
+    {
+      "index": 1,
+      "name": "iq_input",
+      "type": "InputLayer",
+      "parameters": 0,
+      "trainable": true,
+      "output_shape": "(None, 128, 2)"
+    },
+    {
+      "index": 2,
+      "name": "conv1d_1",
+      "type": "Conv1D",
+      "parameters": 224,
+      "trainable": true,
+      "output_shape": "(None, 128, 32)"
+    },
+    {
+      "index": 3,
+      "name": "bn_1",
+      "type": "BatchNormalization",
+      "parameters": 128,
+      "trainable": true,
+      "output_shape": "(None, 128, 32)"
+    },
+    {
+      "index": 4,
+      "name": "dropout_1",
+      "type": "Dropout",
+      "parameters": 0,
+      "trainable": true,
+      "output_shape": "(None, 128, 32)"
+    },
+    {
+      "index": 5,
+      "name": "conv1d_2",
+      "type": "Conv1D",
+      "parameters": 5152,
+      "trainable": true,
+      "output_shape": "(None, 128, 32)"
+    },
+    {
+      "index": 6,
+      "name": "bn_2",
+      "type": "BatchNormalization",
+      "parameters": 128,
+      "trainable": true,
+      "output_shape": "(None, 128, 32)"
+    },
+    {
+      "index": 7,
+      "name": "pool_2",
+      "type": "AveragePooling1D",
+      "parameters": 0,
+      "trainable": true,
+      "output_shape": "(None, 64, 32)"
+    },
+    {
+      "index": 8,
+      "name": "dropout_2",
+      "type": "Dropout",
+      "parameters": 0,
+      "trainable": true,
+      "output_shape": "(None, 64, 32)"
+    },
+    {
+      "index": 9,
+      "name": "global_avg_pool",
+      "type": "GlobalAveragePooling1D",
+      "parameters": 0,
+      "trainable": true,
+      "output_shape": "(None, 32)"
+    },
+    {
+      "index": 10,
+      "name": "dense_1",
+      "type": "Dense",
+      "parameters": 3168,
+      "trainable": true,
+      "output_shape": "(None, 96)"
+    },
+    {
+      "index": 11,
+      "name": "dense_dropout_1",
+      "type": "Dropout",
+      "parameters": 0,
+      "trainable": true,
+      "output_shape": "(None, 96)"
+    },
+    {
+      "index": 12,
+      "name": "output",
+      "type": "Dense",
+      "parameters": 388,
+      "trainable": true,
+      "output_shape": "(None, 4)"
+    }
+  ]
+}
